@@ -34,7 +34,7 @@ class Ebook extends ItemBibliotecaDigital implements Baixavel {
     @Override
     public void baixar() {
         System.out.println("Baixando o ebook " + titulo + "...");
-        // Implementação do download
+        
         System.out.println("Download do ebook " + titulo + " concluido!");
     }
 }
@@ -55,14 +55,14 @@ class VideoDigital extends ItemBibliotecaDigital implements Baixavel, Visualizav
     @Override
     public void baixar() {
         System.out.println("Baixando o video " + titulo + "...");
-        // Implementação do download
+        
         System.out.println("Download do video " + titulo + " concluido!");
     }
 
     @Override
     public void visualizar() {
         System.out.println("Visualizando o video " + titulo + "...");
-        // Implementação da visualização
+        
         System.out.println("Visualização do video " + titulo + " concluida!");
     }
 }
