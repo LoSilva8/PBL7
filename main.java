@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 abstract class ItemBibliotecaDigital {
     protected String titulo;
     protected String autor;
@@ -34,8 +36,7 @@ class Ebook extends ItemBibliotecaDigital implements Baixavel {
     @Override
     public void baixar() {
         System.out.println("Baixando o ebook " + titulo + "...");
-        
-        System.out.println("Download do ebook " + titulo + " concluido!");
+        System.out.println("Download do ebook " + titulo + " concluído!");
     }
 }
 
@@ -54,16 +55,14 @@ class VideoDigital extends ItemBibliotecaDigital implements Baixavel, Visualizav
 
     @Override
     public void baixar() {
-        System.out.println("Baixando o video " + titulo + "...");
-        
-        System.out.println("Download do video " + titulo + " concluido!");
+        System.out.println("Baixando o vídeo " + titulo + "...");
+        System.out.println("Download do vídeo " + titulo + " concluído!");
     }
 
     @Override
     public void visualizar() {
-        System.out.println("Visualizando o video " + titulo + "...");
-        
-        System.out.println("Visualização do video " + titulo + " concluida!");
+        System.out.println("Visualizando o vídeo " + titulo + "...");
+        System.out.println("Visualização do vídeo " + titulo + " concluída!");
     }
 }
 
@@ -77,9 +76,35 @@ public class Main {
         System.out.println(video1.descricao());
         System.out.println(ebook2.descricao());
 
-        ebook1.baixar();
-        ebook2.baixar();
+        Scanner scanner = new Scanner(System.in);
 
-        video1.visualizar();
+        System.out.println("\nEscolha uma opção para o ebook1:");
+        System.out.println("1. Baixar");
+        System.out.println("2. Visualizar");
+        int opcao = scanner.nextInt();
+
+        if (opcao == 1) {
+            ebook1.baixar();
+        }
+
+        System.out.println("\nEscolha uma opção para o ebook2:");
+        System.out.println("1. Baixar");
+        System.out.println("2. Visualizar");
+        opcao = scanner.nextInt();
+
+        if (opcao == 1) {
+            ebook2.baixar();
+        }
+
+        System.out.println("\nEscolha uma opção para o vídeo1:");
+        System.out.println("1. Baixar");
+        System.out.println("2. Visualizar");
+        opcao = scanner.nextInt();
+
+        if (opcao == 1) {
+            video1.baixar();
+        } else if (opcao == 2) {
+            video1.visualizar();
+        }
     }
 }
